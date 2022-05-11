@@ -2,7 +2,7 @@ package pl.sda.arp4.objects;
 
 import java.util.Scanner;
 
-public class Main {
+public class MainPetlaZBoolean {
     public static void main(String[] args) {
         // wypisanie wszystkich dostępnych opcji ENUM
         for (RodzajPojazdu rodzaj : RodzajPojazdu.values()) {
@@ -11,9 +11,10 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         // użytkownik wpisuje coś do scannera
         // a w wyniku chcę otrzymać zmienną typu RodzajPojazdu
-        RodzajPojazdu typ = null;
+        RodzajPojazdu zmienna = null;
 
-        while (typ == null) {
+        boolean czyUstawiona = false;
+        while (!czyUstawiona) {
             System.out.println("Podaj rodzaj pojazdu:");
             String rodzajString = scanner.next();
 
@@ -21,29 +22,29 @@ public class Main {
                 // zamiast pisać if/else dla wszystkich rodzajów i porównywać
                 // możemy zastosować metodę .valueOf która wygenerowana jest
                 // dla każdego typu wyliczeniowego(enum)
-                typ = RodzajPojazdu.valueOf(rodzajString.toUpperCase());
+                zmienna = RodzajPojazdu.valueOf(rodzajString.toUpperCase());
 
+                czyUstawiona = true;
             } catch (IllegalArgumentException iae) {
                 System.out.println("Wybrana opcja nie istnieje...");
             }
         }
-
-        System.out.println(typ);
+        System.out.println(zmienna);
 
 //        if (rodzajString.equalsIgnoreCase("osobowy")) {
-//            typ = RodzajPojazdu.OSOBOWY;
+//            zmienna = RodzajPojazdu.OSOBOWY;
 //        } else if (rodzajString.equals("ciezarowy")) {
-//            typ = RodzajPojazdu.CIEZAROWY;
+//            zmienna = RodzajPojazdu.CIEZAROWY;
 //        } else if (rodzajString.equals("jednoslad")) {
-//            typ = RodzajPojazdu.JEDNOSLAD;
+//            zmienna = RodzajPojazdu.JEDNOSLAD;
 //        }
 //
 //        if (rodzajString.equalsIgnoreCase("1")) {
-//            typ = RodzajPojazdu.OSOBOWY;
+//            zmienna = RodzajPojazdu.OSOBOWY;
 //        } else if (rodzajString.equals("2")) {
-//            typ = RodzajPojazdu.CIEZAROWY;
+//            zmienna = RodzajPojazdu.CIEZAROWY;
 //        } else if (rodzajString.equals("3")) {
-//            typ = RodzajPojazdu.JEDNOSLAD;
+//            zmienna = RodzajPojazdu.JEDNOSLAD;
 //        }
 
     }

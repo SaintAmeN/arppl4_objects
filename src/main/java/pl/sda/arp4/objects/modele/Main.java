@@ -19,5 +19,7 @@ public class Main {
 //        student1.nazwisko = "Gaweł";
         System.out.println(student1);
         System.out.println("Ten student ma na imie: " + student1.getImie());
+
+        student1.przedstawSie();
     }
 }

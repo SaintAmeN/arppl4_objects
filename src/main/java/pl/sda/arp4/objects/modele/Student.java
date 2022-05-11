@@ -13,6 +13,10 @@ public class Student {
         this.nazwisko = nazwisko;
     }
 
+    public void przedstawSie(){
+        System.out.println("Jestem biednym studentem, mam na imie " + imie);
+    }
+
     public String getImie() {
         return imie;
     }
